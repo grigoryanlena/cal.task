@@ -1,0 +1,23 @@
+
+<div class="calendar">
+  <div class="header" >
+    <pre (click)="goBack()"> < </pre>
+    <h1> {{year}} {{month}}</h1>
+    <pre (click)="goNext()"> > </pre>
+  </div>
+
+  <div class="weekDays">
+    <div>Mon</div>
+    <div>Tue</div>
+    <div>Wed</div>
+    <div>Thu</div>
+    <div>Fri</div>
+    <div>Sut</div>
+    <div>Sun</div>
+  </div>
+  <div class='days'>
+    <div *ngFor="let item of emptyArr"></div>
+    <div class="day" *ngFor="let day of daysArr let i =index"><button
+      [ngClass]="{'red': i+1===date.getDate()}">{{i+1}}</button></div>
+  </div>
+</div>
